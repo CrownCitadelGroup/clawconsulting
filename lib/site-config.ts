@@ -6,14 +6,14 @@ export const siteConfig = {
   title: "Openclaw & AI Consulting in Fuquay-Varina, NC | Private self-hosted AI setup",
   description:
     "OpenClaw installation Fuquay-Varina with local and remote support across the Raleigh Triangle. Private, self-hosted AI installation NC with chat app integration, persistent memory, and practical automation.",
-  ownerName: "[Your Name]",
+  ownerName: "Jc",
   location: "Fuquay-Varina, NC",
-  phone: "(555) 123-4567",
-  email: "hello@openclawinstallations.com",
+  phone: "",
+  email: "consulting@humanityfirst.ai",
   localInstallPrice: "$250",
   localInstallIncludes: ["Up to 1 hour on-site installation", "1 hour of free post-install tech support"],
   addOnSupportRate: "Contact for pricing",
-  remoteSetupStartingPrice: "$...",
+  remoteSetupStartingPrice: "$250",
   serviceAreas: ["Fuquay-Varina", "Holly Springs", "Apex", "Garner", "Raleigh", "Cary", "Angier", "Willow Spring"],
   openClawDefinition:
     "OpenClaw is a private, self-hosted AI system that works where you already work. It runs on your own hardware or VPS, connects to your chat apps, remembers context, and can take real actions with guardrails you control.",
@@ -35,7 +35,6 @@ export const siteConfig = {
 
 export const navigation = [
   { href: "/services", label: "Services" },
-  { href: "/business", label: "Business" },
   { href: "/service-area", label: "Service Area" },
   { href: "/about", label: "About" },
   { href: "/legal", label: "Legal" }

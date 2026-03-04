@@ -5,7 +5,7 @@ import { siteUrl } from "@/lib/site-config";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteUrl.replace(/\/$/, "");
   const now = new Date();
-  const paths = ["/", "/services", "/business", "/about", "/legal", "/thanks"];
+  const paths = ["/", "/services", "/ai-for-business", "/service-area", "/request-install", "/business", "/about", "/legal", "/thanks"];
 
   return paths.map((path) => ({
     url: `${baseUrl}${path}`,

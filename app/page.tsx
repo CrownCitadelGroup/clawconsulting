@@ -5,16 +5,12 @@ import {
   Brain,
   CheckCircle2,
   ClipboardCheck,
-  FileCode2,
   Globe,
   Handshake,
   MessagesSquare,
-  Network,
   Puzzle,
-  ScanSearch,
   ServerCog,
   ShieldCheck,
-  Sparkles,
   Terminal,
   UserRound,
   UsersRound,
@@ -22,7 +18,6 @@ import {
 } from "lucide-react";
 
 import { FaqAccordion } from "@/components/faq-accordion";
-import { LeadForm } from "@/components/lead-form";
 import { Reveal } from "@/components/reveal";
 import { Section } from "@/components/section";
 import { siteConfig } from "@/lib/site-config";
@@ -114,39 +109,6 @@ const installProcess = [
   {
     title: "Post-install support (1 hour included)",
     description: "Use your included support hour any time after install for troubleshooting, usage questions, or workflow guidance.",
-    icon: ShieldCheck
-  }
-];
-
-const businessIntegration = [
-  {
-    title: "Workflow automation",
-    description:
-      "We identify repetitive, high-friction tasks and design AI automation for small business teams, from inbox triage and scheduling to document generation and data extraction.",
-    icon: Network
-  },
-  {
-    title: "Team deployment",
-    description:
-      "Set up OpenClaw for multiple team members with role-based access, shared skills, and consistent configuration, plus onboarding notes for future hires.",
-    icon: UsersRound
-  },
-  {
-    title: "Custom skills and integrations",
-    description:
-      "If your team runs the same sequence of steps every week, we can turn it into a single command with custom OpenClaw skills and integrations.",
-    icon: FileCode2
-  },
-  {
-    title: "AI strategy consultation",
-    description:
-      "Not sure where AI fits yet? We audit your current workflows, identify highest-impact opportunities, and recommend what actually works now.",
-    icon: ScanSearch
-  },
-  {
-    title: "Ongoing support plans",
-    description:
-      "Monthly support options are available for teams that want regular updates, troubleshooting, and workflow refinement as operations evolve.",
     icon: ShieldCheck
   }
 ];
@@ -249,12 +211,12 @@ export default function HomePage() {
               that exact use case.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/#contact-form" className="btn-primary">
+              <Link href="/request-install" className="btn-primary">
                 Request an Install
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
-              <Link href="/business#quote-form" className="btn-ghost-dark">
-                Get a Business Quote
+              <Link href="/ai-for-business" className="btn-ghost-dark">
+                AI for Business
               </Link>
               <a href="#capabilities" className="btn-ghost-dark">
                 See What It Can Do
@@ -405,54 +367,19 @@ export default function HomePage() {
               <p className="mt-5 rounded-xl border border-mist/18 bg-white/5 px-4 py-3 text-sm text-mist/74">
                 Additional support is available at an hourly rate. Contact us for current pricing.
               </p>
-            </article>
-          </Reveal>
-        </div>
-      </Section>
-
-      <Section
-        tone="dark"
-        eyebrow="AI Integration for Business"
-        title="Beyond the install: AI that works inside your business"
-        description="For owners and operators who know AI matters but want practical deployment, not hype."
-      >
-        <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
-          <Reveal>
-            <article className="card-dark border border-mist/14 p-6 sm:sticky sm:top-24">
-              <p className="text-sm leading-relaxed text-mist/78">
-                We provide OpenClaw local support Raleigh Triangle businesses can rely on, including AI business integration Wake County engagements
-                and OpenClaw VPS installation for distributed teams.
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-mist/78">
-                Most engagements start with one team, one process, and clear success criteria before expanding.
-              </p>
-              <Link href="/business#quote-form" className="btn-primary mt-6">
-                Get a Business Quote
+              <Link href="/request-install" className="btn-primary mt-5">
+                Request an Install
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
             </article>
           </Reveal>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {businessIntegration.map((service, index) => (
-              <Reveal key={service.title} delay={index * 75}>
-                <article className="card-mid card-hover border border-mist/14 p-5">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-amber/35 bg-amber/12 text-amber">
-                    <service.icon className="h-5 w-5" aria-hidden />
-                  </div>
-                  <h3 className="mt-3 text-lg font-semibold text-white">{service.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-mist/74">{service.description}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </Section>
 
       <Section tone="mid" eyebrow="Who This Is For" title="Built for people who want more than a chat window" centered>
-        <div className="grid gap-5 md:grid-cols-2">
-          <Reveal>
-            <article className="card-mid border border-mist/14 p-6 sm:p-7">
+        <div className="grid gap-5 md:grid-cols-2 md:[grid-auto-rows:1fr]">
+          <Reveal className="h-full">
+            <article className="card-mid flex h-full flex-col border border-mist/14 p-6 sm:p-7">
               <div className="flex items-center gap-2">
                 <div className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-brand/35 bg-brand/15 text-brand">
                   <UserRound className="h-4 w-4" aria-hidden />
@@ -467,8 +394,8 @@ export default function HomePage() {
             </article>
           </Reveal>
 
-          <Reveal delay={90}>
-            <article className="card-mid border border-mist/14 p-6 sm:p-7">
+          <Reveal delay={90} className="h-full">
+            <article className="card-mid flex h-full flex-col border border-mist/14 p-6 sm:p-7">
               <div className="flex items-center gap-2">
                 <div className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-amber/35 bg-amber/12 text-amber">
                   <UsersRound className="h-4 w-4" aria-hidden />
@@ -480,6 +407,9 @@ export default function HomePage() {
                 team, build workflows around your real processes, and document everything so it is maintainable. We support solo operators up through
                 teams of 20+.
               </p>
+              <Link href="/ai-for-business" className="btn-ghost-dark mt-6 self-start">
+                Visit AI for Business
+              </Link>
             </article>
           </Reveal>
         </div>
@@ -491,43 +421,23 @@ export default function HomePage() {
         </Reveal>
       </Section>
 
-      <Section
-        id="contact-form"
-        tone="dark"
-        eyebrow="Request an Install"
-        title="Tell us what you need"
-        description="No commitment. Tell us what you are thinking and we will follow up with scope and next steps."
-      >
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <Reveal>
-            <article className="card-dark border border-mist/14 p-6 sm:p-8">
-              <p className="section-eyebrow border-amber/40 bg-amber/10 text-amber">No commitment</p>
-              <h3 className="mt-5 text-3xl font-semibold leading-tight text-white">Start the conversation</h3>
-              <p className="mt-4 text-sm leading-relaxed text-mist/76">
-                We will review your goals, your current setup, and your preferred timeline before recommending next steps. You get a practical scope,
-                not a generic package.
-              </p>
-              <div className="mt-6 space-y-3 text-sm text-mist/76">
-                <p className="flex items-start gap-2">
-                  <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
-                  Response with scope and options based on your environment
-                </p>
-                <p className="flex items-start gap-2">
-                  <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
-                  Local install availability across Fuquay-Varina and the Triangle
-                </p>
-                <p className="flex items-start gap-2">
-                  <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
-                  Remote setup available when on-site is not required
-                </p>
-              </div>
-            </article>
-          </Reveal>
-
-          <Reveal delay={80}>
-            <LeadForm />
-          </Reveal>
-        </div>
+      <Section tone="dark" eyebrow="Request an Install" title="Ready to get started?" description="Book your install from the dedicated request page.">
+        <Reveal>
+          <div className="card-dark border border-mist/14 p-6 sm:p-8">
+            <p className="text-sm leading-relaxed text-mist/76">
+              Share your setup details, preferred timing, and what you want OpenClaw to handle first. We will follow up with clear next steps.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link href="/request-install" className="btn-primary">
+                Request Install
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
+              <Link href="/ai-for-business#quote-form" className="btn-ghost-dark">
+                AI for Business Quote
+              </Link>
+            </div>
+          </div>
+        </Reveal>
       </Section>
     </>
   );

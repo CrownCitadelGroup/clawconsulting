@@ -28,15 +28,10 @@ export function SiteFooter() {
         </div>
 
         <div className="flex flex-col gap-3 border-t border-mist/12 pt-5 text-xs text-mist/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            (c) {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
-          </p>
+          <p>(c) {new Date().getFullYear()} Crown Citadel Group LLC. All rights reserved.</p>
           <div className="flex flex-wrap gap-4">
             <a href={`mailto:${siteConfig.email}`} className="hover:text-mist">
               {siteConfig.email}
-            </a>
-            <a href={`tel:${siteConfig.phone.replace(/[^\d+]/g, "")}`} className="hover:text-mist">
-              {siteConfig.phone}
             </a>
           </div>
         </div>

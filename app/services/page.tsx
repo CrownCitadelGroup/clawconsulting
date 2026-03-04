@@ -75,6 +75,15 @@ const services = [
       "Maintenance and iterative workflow improvements",
       "Priority response options for recurring clients"
     ]
+  },
+  {
+    name: "Security Hardening Review",
+    price: "Optional add-on",
+    included: [
+      "Least-privilege review for model access and system permissions",
+      "Environment hardening checklist for local device or VPS deployment",
+      "Action plan for backups, credential handling, and operational safety"
+    ]
   }
 ];
 
@@ -90,30 +99,35 @@ export default function ServicesPage() {
               Choose a one-time install or an ongoing support partnership depending on your environment and team needs.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/#contact-form" className="btn-primary">
+              <Link href="/request-install" className="btn-primary">
                 Request an Install
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
-              <Link href="/business#quote-form" className="btn-ghost-dark">
-                Get Business Quote
+              <Link href="/ai-for-business" className="btn-ghost-dark">
+                AI for Business
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <Section tone="light" eyebrow="Packages" title="Services built around real deployment" description="Clear scope, clear outcomes, and support that matches your setup.">
-        <div className="grid gap-5 md:grid-cols-2">
+      <Section
+        tone="mid"
+        eyebrow="Packages"
+        title="Services built around real deployment"
+        description="Clear scope, clear outcomes, and support that matches your setup."
+      >
+        <div className="grid gap-5 md:grid-cols-2 md:[grid-auto-rows:1fr]">
           {services.map((service, index) => (
-            <Reveal key={service.name} delay={index * 70}>
-              <article className="card-light border border-ink/12 p-6">
+            <Reveal key={service.name} delay={index * 70} className="h-full">
+              <article className="card-mid card-hover flex h-full flex-col border border-mist/14 p-6">
                 <div className="flex items-start justify-between gap-3">
-                  <h2 className="text-xl font-semibold text-ink">{service.name}</h2>
-                  <p className="rounded-full border border-ink/16 bg-ink/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-slate">
+                  <h2 className="text-xl font-semibold text-white">{service.name}</h2>
+                  <p className="rounded-full border border-mist/16 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-mist/72">
                     {service.price}
                   </p>
                 </div>
-                <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-slate">
+                <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-mist/76">
                   {service.included.map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />

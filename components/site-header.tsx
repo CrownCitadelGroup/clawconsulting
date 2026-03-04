@@ -3,14 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, Phone, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
 
 import { navigation, siteConfig } from "@/lib/site-config";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const phoneLink = `tel:${siteConfig.phone.replace(/[^\d+]/g, "")}`;
+  const emailLink = `mailto:${siteConfig.email}`;
 
   return (
     <header className="sticky top-0 z-50 border-b border-mist/15 bg-coal-950/90 backdrop-blur-lg">
@@ -29,11 +29,11 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <a href={phoneLink} className="btn-ghost-dark !px-3 !py-2 !text-xs">
-            <Phone className="h-4 w-4" aria-hidden />
-            <span>{siteConfig.phone}</span>
+          <a href={emailLink} className="btn-ghost-dark !gap-2.5 !px-3 !py-2 !text-xs">
+            <Mail className="h-4 w-4" aria-hidden />
+            <span>{siteConfig.email}</span>
           </a>
-          <Link href="/#contact-form" className="btn-primary !px-3 !py-2 !text-xs">
+          <Link href="/request-install" className="btn-primary !px-3 !py-2 !text-xs">
             Request Install
           </Link>
         </div>
@@ -67,11 +67,11 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="mt-4 flex flex-col gap-2">
-          <a href={phoneLink} className="btn-ghost-dark !w-full" onClick={() => setIsOpen(false)}>
-            <Phone className="h-4 w-4" aria-hidden />
-            <span>{siteConfig.phone}</span>
+          <a href={emailLink} className="btn-ghost-dark !w-full !gap-2.5" onClick={() => setIsOpen(false)}>
+            <Mail className="h-4 w-4" aria-hidden />
+            <span>{siteConfig.email}</span>
           </a>
-          <Link href="/#contact-form" className="btn-primary !w-full" onClick={() => setIsOpen(false)}>
+          <Link href="/request-install" className="btn-primary !w-full" onClick={() => setIsOpen(false)}>
             Request Install
           </Link>
         </div>

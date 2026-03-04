@@ -47,8 +47,8 @@ const localBusinessSchema = {
   name: siteConfig.name,
   description: siteConfig.description,
   url: siteUrl,
-  telephone: siteConfig.phone,
   email: siteConfig.email,
+  ...(siteConfig.phone ? { telephone: siteConfig.phone } : {}),
   address: {
     "@type": "PostalAddress",
     addressLocality: "Fuquay-Varina",

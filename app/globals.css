@@ -256,6 +256,11 @@ select {
   box-shadow: 0 0 0 3px rgba(217, 62, 62, 0.2);
 }
 
+.input-dark option {
+  background: #f5f3ef;
+  color: #17181c;
+}
+
 .form-label-dark {
   display: block;
   font-size: 0.8rem;
