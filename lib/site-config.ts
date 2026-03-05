@@ -1,4 +1,4 @@
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.openclawinstallations.com";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://claw.humanityfirst.ai";
 
 export const siteConfig = {
   name: "Openclaw & AI Consulting",

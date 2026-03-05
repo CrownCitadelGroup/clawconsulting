@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/favicon.ico",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.humanityfirst.ai"
+        }
+      ],
+      "destination": "/humanityfirstlogobadge.png"
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.humanityfirst.ai"
+        }
+      ],
+      "destination": "/humanityfirst.html"
+    }
+  ]
+}

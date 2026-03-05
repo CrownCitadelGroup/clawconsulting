@@ -34,6 +34,7 @@ export function FaqAccordion({ items, tone = "light" }: FaqAccordionProps) {
             <button
               type="button"
               aria-expanded={isOpen}
+              aria-controls={`faq-answer-${index}`}
               onClick={() => setOpenIndex((prev) => (prev === index ? null : index))}
               className="flex w-full items-center justify-between gap-4 text-left"
             >
@@ -43,7 +44,7 @@ export function FaqAccordion({ items, tone = "light" }: FaqAccordionProps) {
                 aria-hidden
               />
             </button>
-            <div className={`faq-panel ${isOpen ? "open" : "closed"}`}>
+            <div id={`faq-answer-${index}`} hidden={!isOpen} className={`faq-panel ${isOpen ? "open" : "closed"}`}>
               <div className="faq-panel-inner">
                 <p className={`text-sm leading-relaxed ${isDark ? "text-mist/76" : "text-slate"}`}>{item.answer}</p>
               </div>
