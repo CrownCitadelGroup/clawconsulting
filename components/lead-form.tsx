@@ -60,13 +60,15 @@ export function LeadForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="card-mid space-y-6 border border-mist/15 p-6 sm:p-8">
+    <form onSubmit={handleSubmit} autoComplete="on" className="card-mid space-y-6 border border-mist/15 p-6 sm:p-8">
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="form-label-dark space-y-1.5">
           Name
           <input
             required
             type="text"
+            name="name"
+            autoComplete="name"
             value={formData.name}
             onChange={(event) => setFormData((prev) => ({ ...prev, name: event.target.value }))}
             className="input-dark"
@@ -78,6 +80,12 @@ export function LeadForm() {
           <input
             required
             type="email"
+            name="email"
+            autoComplete="email"
+            inputMode="email"
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
             value={formData.email}
             onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
             className="input-dark"
@@ -89,6 +97,9 @@ export function LeadForm() {
           <input
             required
             type="tel"
+            name="tel"
+            autoComplete="tel"
+            inputMode="tel"
             value={formData.phone}
             onChange={(event) => setFormData((prev) => ({ ...prev, phone: event.target.value }))}
             className="input-dark"

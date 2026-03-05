@@ -46,13 +46,22 @@ export async function sendLeadEmail(payload: LeadData): Promise<"resend" | "smtp
   const resendApiKey = process.env.RESEND_API_KEY;
   if (resendApiKey) {
     const resend = new Resend(resendApiKey);
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: fromEmail,
       to: [toEmail],
       subject,
       text: textBody,
       html: htmlBody
     });
+
+    if (error) {
+      throw new Error(`Resend send failed: ${error.message}`);
+    }
+
+    if (!data?.id) {
+      throw new Error("Resend send failed: missing message id");
+    }
+
     return "resend";
   }
 

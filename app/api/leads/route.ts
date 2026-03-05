@@ -61,10 +61,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true, delivery, discordAlertSent });
   } catch (error) {
     console.error("[lead] Submission error", error);
+    const errorMessage = error instanceof Error ? error.message : "Unable to process submission";
+
     return NextResponse.json(
       {
         ok: false,
-        error: "Unable to process submission"
+        error: process.env.NODE_ENV === "development" ? errorMessage : "Unable to process submission"
       },
       {
         status: 500
