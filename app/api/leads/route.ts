@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { sendDiscordLeadAlert } from "@/lib/discord";
 import { sendLeadEmail } from "@/lib/email";
 
 type SupportedFormType = "install-request" | "business-quote";
@@ -50,7 +51,14 @@ export async function POST(request: Request) {
 
     const delivery = await sendLeadEmail(payload);
 
-    return NextResponse.json({ ok: true, delivery });
+    let discordAlertSent = false;
+    try {
+      discordAlertSent = await sendDiscordLeadAlert(payload);
+    } catch (error) {
+      console.error("[lead] Discord alert error", error);
+    }
+
+    return NextResponse.json({ ok: true, delivery, discordAlertSent });
   } catch (error) {
     console.error("[lead] Submission error", error);
     return NextResponse.json(

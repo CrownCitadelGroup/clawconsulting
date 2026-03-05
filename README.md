@@ -67,6 +67,7 @@ http://localhost:3011
 - If no email provider env vars are set, submissions are still accepted and logged in the server console.
 - If `RESEND_API_KEY` is set (and `LEAD_TO_EMAIL` is set), Resend is used.
 - Otherwise, if SMTP vars are set, nodemailer SMTP is used.
+- If `DISCORD_WEBHOOK_URL` is set, each lead is also posted to Discord via webhook.
 
 ## Environment variables
 
@@ -79,6 +80,7 @@ LEAD_TO_EMAIL=you@example.com
 LEAD_FROM_EMAIL=no-reply@claw.humanityfirst.ai
 
 RESEND_API_KEY=
+DISCORD_WEBHOOK_URL=
 
 SMTP_HOST=
 SMTP_PORT=587
@@ -86,6 +88,13 @@ SMTP_USER=
 SMTP_PASS=
 SMTP_SECURE=false
 ```
+
+## Discord webhook setup
+
+1. In Discord, open server settings -> Integrations -> Webhooks.
+2. Create a webhook for your target channel and copy the webhook URL.
+3. Set `DISCORD_WEBHOOK_URL` in `.env.local` (and in Vercel env vars for production).
+4. Submit a form. You should see a "New OpenClaw Lead" embed in Discord.
 
 ## Deploy to Vercel
 
