@@ -245,8 +245,9 @@ export default function HomePage() {
                 <Image
                   src="/discordchat.png"
                   alt="OpenClaw assistant chat interface on desktop and mobile"
-                  width={1224}
-                  height={768}
+                  width={512}
+                  height={490}
+                  sizes="(min-width: 1024px) 430px, (min-width: 640px) 70vw, 92vw"
                   className="h-auto w-full rounded-lg border border-mist/10"
                   priority
                 />
