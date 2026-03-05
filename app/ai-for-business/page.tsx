@@ -99,7 +99,7 @@ export default function BusinessPage() {
         tone="dark"
         eyebrow="What We Build"
         title="Business services focused on operations"
-        description="OpenClaw local support Raleigh Triangle teams can use as a one-time project or an ongoing partnership."
+        description="OpenClaw offers local support Raleigh Triangle teams can use as a one-time project or an ongoing partnership."
       >
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {offerings.map((offering, index) => (

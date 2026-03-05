@@ -306,7 +306,7 @@ export default function HomePage() {
         tone="dark"
         eyebrow="Capabilities"
         title="What OpenClaw actually does"
-        description="Practical AI assistant setup near me should feel useful on day one. These are real tasks people hand off immediately."
+        description="A practical AI assistant setup near me should feel useful on day one. These are real tasks people hand off immediately."
       >
         <div className="grid gap-5 md:grid-cols-2 md:[grid-auto-rows:1fr]">
           {openClawCapabilities.map((capability, index) => (
@@ -356,7 +356,6 @@ export default function HomePage() {
               <p className="section-eyebrow border-mist/22 bg-white/5 text-mist/82">Pricing</p>
               <p className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-mist/66">Standard local install</p>
               <p className="mt-1 text-5xl font-semibold text-white">{siteConfig.localInstallPrice}</p>
-              <p className="mt-4 text-sm leading-relaxed text-mist/76">Includes up to 1 hour on-site installation plus 1 hour of post-install support.</p>
               <ul className="mt-5 space-y-3 text-sm text-mist/78">
                 {siteConfig.localInstallIncludes.map((item) => (
                   <li key={item} className="flex items-start gap-2">
