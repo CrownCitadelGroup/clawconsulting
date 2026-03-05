@@ -57,7 +57,10 @@ export default function LegalPage() {
             </p>
             <p className="text-sm leading-relaxed text-mist/76">
               Contact us at{" "}
-              <a className="font-semibold text-white underline decoration-brand/60 underline-offset-2" href={`mailto:${siteConfig.email}`}>
+              <a
+                className="font-semibold text-white underline decoration-brand/60 underline-offset-2"
+                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("AI Consulting inquiry")}`}
+              >
                 {siteConfig.email}
               </a>{" "}
               for privacy requests.

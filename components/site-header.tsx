@@ -10,7 +10,7 @@ import { navigation, siteConfig } from "@/lib/site-config";
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const emailLink = `mailto:${siteConfig.email}`;
+  const emailLink = `mailto:${siteConfig.email}?subject=${encodeURIComponent("AI Consulting inquiry")}`;
 
   return (
     <header className="sticky top-0 z-50 border-b border-mist/15 bg-coal-950/90 backdrop-blur-lg">

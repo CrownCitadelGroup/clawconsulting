@@ -30,7 +30,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-3 border-t border-mist/12 pt-5 text-xs text-mist/60 sm:flex-row sm:items-center sm:justify-between">
           <p>(c) {new Date().getFullYear()} Crown Citadel Group LLC. All rights reserved.</p>
           <div className="flex flex-wrap gap-4">
-            <a href={`mailto:${siteConfig.email}`} className="hover:text-mist">
+            <a href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("AI Consulting inquiry")}`} className="hover:text-mist">
               {siteConfig.email}
             </a>
           </div>
